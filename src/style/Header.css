@@ -25,11 +25,10 @@
 .header-logo {
     cursor: pointer;
     left: 0;
-
+    height: 40px;
 }
 
 .header-avatar {
-
     right: 20px;
     width: 40px;
     height: 40px;
