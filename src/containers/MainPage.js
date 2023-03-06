@@ -1,29 +1,28 @@
-import React, {useState} from "react";
+import React from "react";
 import logo from '../icons/MovieTube-logo.png';
-import '../style/Login.css';
+import '../style/Main.css';
+import {useNavigate} from "react-router-dom";
 
-function LoginPage() {
-    const [singIn, setSingIn] = useState(false)
+function MainPage() {
+    const navigate = useNavigate()
     return(
         <div className='login-container'>
             <div className='login-background'>
                 <img className='login-logo-icon' src={logo} alt='logo'/>
-                <button className='login-button' onClick={() => setSingIn(true) }>Sing In</button>
+                <button className='login-button' onClick={ () => { navigate('/signin')}}>Sing In</button>
                 <div className='login-gradient' />
             </div>
-            {singIn ? (<></>): (
                 <div className='login-content'>
                     <h1>Watch movies, TV, series at MovieTube online cinema.</h1>
                     <h3>Enter Email to become a member</h3>
                     <div className='login-form'>
                         <form>
                             <input type='email' placeholder='Email' />
-                            <button className='login-member-btn' onClick={() => setSingIn(true) }>GET MEMBERSHIP</button>
+                            <button className='login-member-btn' onClick={() => navigate('/signin') }>GET MEMBERSHIP</button>
                         </form>
                     </div>
                 </div>
-            )}
         </div>
     );
 }
-export default LoginPage;
+export default MainPage;
